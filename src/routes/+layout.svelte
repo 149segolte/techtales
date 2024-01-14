@@ -1,46 +1,48 @@
-<script>
+<script lang="ts">
 	import '../app.postcss';
-	import { Frame } from 'lucide-svelte';
+	import { Frame, User, Settings, LogOut } from 'lucide-svelte';
 	import * as Avatar from '$lib/components/ui/avatar';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
-	import { Button } from '$lib/components/ui/button';
-	import { writable } from 'svelte/store';
-	let user = writable(null);
 </script>
 
-<div class="container">
-	<nav class="flex items-center mt-4 p-3 w-full h-14 rounded-full bg-neutral-700">
-		<div class="flex text-white">
-			<Frame />
-			<a href="/">Home</a>
-		</div>
-		{#if $user}
-			<div class="flex ml-auto">
-				<DropdownMenu.Root>
-					<DropdownMenu.Trigger>
-						<Avatar.Root>
-							<Avatar.Image src="https://github.com/shadcn.png" alt="@shadcn" />
-							<Avatar.Fallback>CN</Avatar.Fallback>
-						</Avatar.Root>
-					</DropdownMenu.Trigger>
-					<DropdownMenu.Content align="end">
-						<DropdownMenu.Group>
-							<DropdownMenu.Label>My Account</DropdownMenu.Label>
-							<DropdownMenu.Separator />
-							<DropdownMenu.Item>Profile</DropdownMenu.Item>
-							<DropdownMenu.Item>Billing</DropdownMenu.Item>
-							<DropdownMenu.Item>Team</DropdownMenu.Item>
-							<DropdownMenu.Item>Subscription</DropdownMenu.Item>
-						</DropdownMenu.Group>
-					</DropdownMenu.Content>
-				</DropdownMenu.Root>
+<div class="min-h-screen m-0 p-0 bg-neutral-100 overflow-auto">
+	<div class="container">
+		<nav class="my-6 bg-white p-2 rounded-lg shadow">
+			<div class="flex justify-between items-center">
+				<div class="mx-1 flex space-x-4">
+					<Frame class="w-8 h-8" />
+					<h1 class="text-2xl font-bold">TechTales</h1>
+				</div>
+				<div class="flex space-x-4">
+					<DropdownMenu.Root>
+						<DropdownMenu.Trigger>
+							<Avatar.Root class="hover:cursor-pointer hover:drop-shadow">
+								<Avatar.Image src="" alt="User" />
+								<Avatar.Fallback>U</Avatar.Fallback>
+							</Avatar.Root>
+						</DropdownMenu.Trigger>
+						<DropdownMenu.Content align="end">
+							<DropdownMenu.Group>
+								<DropdownMenu.Label>My Account</DropdownMenu.Label>
+								<DropdownMenu.Separator />
+								<DropdownMenu.Item>
+									<User class="mr-2 h-4 w-4" />
+									<span>Profile</span>
+								</DropdownMenu.Item>
+								<DropdownMenu.Item>
+									<Settings class="mr-2 h-4 w-4" />
+									<span>Settings</span>
+								</DropdownMenu.Item>
+								<DropdownMenu.Item>
+									<LogOut class="mr-2 h-4 w-4" />
+									<span>Sign out</span>
+								</DropdownMenu.Item>
+							</DropdownMenu.Group>
+						</DropdownMenu.Content>
+					</DropdownMenu.Root>
+				</div>
 			</div>
-		{:else}
-			<div class="flex ml-auto">
-				<Button variant="outline">Sign Up</Button>
-				<Button>Sign In</Button>
-			</div>
-		{/if}
-	</nav>
-	<slot />
+		</nav>
+		<slot />
+	</div>
 </div>
