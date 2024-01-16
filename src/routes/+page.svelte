@@ -30,7 +30,7 @@
 
       <div class="flex justify-between w-5/6 py-10">
           <div>
-              <p class="text-6xl font-bold font-sans">
+              <p class="text-5xl font-bold font-sans">
                   Empowering Your <br> Tech Dialogue In <br> Multiple Ways
               </p>
           </div>
@@ -66,7 +66,7 @@
                   Personalized Feed
               </p>
               <p>
-                  Receive tailored content based on <br> your interests.s
+                  Receive tailored content based on <br> your interests.
               </p>
           </div>
       </div>
