@@ -17,15 +17,21 @@
 				opts={{
 					align: 'start'
 				}}
-				class="w-full max-w-sm"
+				class="w-full max-w-3xl"
 			>
 				<Carousel.Content>
 					{#each Array(5) as _, i (i)}
 						<Carousel.Item class="md:basis-1/2 lg:basis-1/3">
 							<div class="p-1">
 								<Card.Root>
-									<Card.Content class="flex items-center justify-center p-6 aspect-square">
-										<span class="text-3xl font-semibold">{i + 1}</span>
+									<Card.Content class="p-0 h-96">
+										<div class="w-full h-1/2 bg-gray-50 rounded-t-md"></div>
+										
+										<Separator />
+										<Card.Header >
+											<Card.Title>Blog {i + 1}</Card.Title>
+											<Card.Description>About the Blog</Card.Description>
+										</Card.Header>
 									</Card.Content>
 								</Card.Root>
 							</div>
@@ -36,34 +42,32 @@
 				<Carousel.Next />
 			</Carousel.Root>
 		</div>
-        <Separator class="my-4" />
-        <div>
-            
-        </div>
+		<Separator class="my-4" />
+		<div class="w-full p-6 bg-white rounded-md shadow md:w-8/12 lg:w-7/12">
+			
+		</div>
 	</div>
 	<Separator orientation="vertical" />
-	<div>
-        <div class="m-4">
-            <Avatar.Root>
-                <Avatar.Image src="https://github.com/shadcn.png" alt="@shadcn" />
-                <Avatar.Fallback>CN</Avatar.Fallback>
-            </Avatar.Root>
-        </div>
-		
-        <div class="m-2">
-            <Card.Root class="w-[350px]">
-                <Card.Header>
-                  <Card.Title>Name</Card.Title>
-                  <Card.Description>Description</Card.Description>
-                </Card.Header>
-                <Card.Content>
-                    Content
-                </Card.Content>
-                <Card.Footer class="flex justify-between">
-                  <Button variant="outline">Cancel</Button>
-                  <Button>Deploy</Button>
-                </Card.Footer>
-              </Card.Root>
-        </div>
+	<div class="p-4">
+		<div class="m-2">
+			<Card.Root class="w-[350px]">
+				<div class="w-full p-4 rounded-t-md size-36 bg-neutral-50">
+					<Avatar.Root class="size-28">
+						<Avatar.Image src="https://github.com/shadcn.png" alt="@shadcn" />
+						<Avatar.Fallback>CN</Avatar.Fallback>
+					</Avatar.Root>
+				</div>
+				<Separator />
+				<Card.Header>
+					<Card.Title>Name</Card.Title>
+					<Card.Description>Description</Card.Description>
+				</Card.Header>
+				<Card.Content>Content</Card.Content>
+				<Card.Footer class="flex justify-between">
+					<Button variant="outline">Cancel</Button>
+					<Button>Deploy</Button>
+				</Card.Footer>
+			</Card.Root>
+		</div>
 	</div>
 </div>
