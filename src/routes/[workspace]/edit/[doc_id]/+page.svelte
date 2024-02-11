@@ -29,7 +29,7 @@
 			</div>
 			<div class="">
 				<Textarea
-					class="h-96 mb-4 border-none text-lg"
+					class="h-[36rem] mb-4 border-none text-lg"
 					placeholder="Type or paste (Ctrl + V) your content here or upload a markdown file."
 				/>
 				<div class="flex space-x-2 mt-4">
